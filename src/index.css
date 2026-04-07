@@ -1,0 +1,87 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@keyframes orangeOrbFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-10px, 8px, 0) scale(1.03);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes grayOrbFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(10px, -8px, 0) scale(1.03);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+
+body {
+  font-family: "Geist", sans-serif;
+}
+
+:root {
+  --pl-bg-1: #111111;
+  --pl-bg-2: #1a1a1a;
+  --pl-panel: #2e2e2e;
+  --pl-text-soft: #b8b9b6;
+  --pl-accent: #ff8400;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(900px 540px at 90% -12%, rgba(255, 132, 0, 0.08), transparent 58%),
+    radial-gradient(720px 460px at 10% 84%, rgba(184, 185, 182, 0.07), transparent 60%),
+    linear-gradient(180deg, #161616 0%, #111111 100%);
+  color: var(--pl-text-soft);
+}
+
+.bg-orb-orange {
+  position: absolute;
+  top: -70px;
+  right: 36px;
+  width: 280px;
+  height: 280px;
+  border-radius: 9999px;
+  background: rgba(255, 132, 0, 0.1);
+  animation: orangeOrbFloat 18s ease-in-out infinite;
+}
+
+.bg-orb-gray {
+  position: absolute;
+  left: -100px;
+  top: 62%;
+  width: 230px;
+  height: 230px;
+  border-radius: 9999px;
+  background: rgba(46, 46, 46, 0.56);
+  animation: grayOrbFloat 20s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .bg-orb-orange {
+    top: -55px;
+    right: 10px;
+    width: 220px;
+    height: 220px;
+  }
+
+  .bg-orb-gray {
+    left: -95px;
+    top: 70%;
+    width: 180px;
+    height: 180px;
+  }
+}

@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section>
+    <section id="about">
       <h2 className="text-orange-500">SOBRE MI</h2>
       <h1>Un perfil que mezcla codigo, criterio y colaboracion</h1>
       <p>

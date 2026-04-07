@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
-    <section className="px-10 pt-24 pb-16 md:px-16 lg:px-20">
-      <div className="mx-auto grid max-w-7xl items-start gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+    <section className="px-4 pt-24 pb-16 md:px-16 lg:px-10">
+      <div className=" mx-auto grid max-w-7xl items-start gap-16 lg:grid-cols-[1.1fr_1.1fr]">
         <div className="max-w-2xl">
 
           <h1 className="leading-none">

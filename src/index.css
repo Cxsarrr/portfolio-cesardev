@@ -1,7 +1,9 @@
 /* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+/* Fuentes globales + utilidades de Tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
+/* Movimiento del orb naranja (hero visual principal) */
 @keyframes orangeOrbFloat {
   0% {
     transform: translate3d(0, 0, 0) scale(1);
@@ -14,6 +16,7 @@
   }
 }
 
+/* Movimiento del orb gris (contrapeso visual) */
 @keyframes grayOrbFloat {
   0% {
     transform: translate3d(0, 0, 0) scale(1);
@@ -26,15 +29,47 @@
   }
 }
 
+/* Movimiento del orb blanco suave (profundidad extra) */
+@keyframes softOrbFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-8px, -12px, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
 
+/* Pulso general de la capa de glow ambiental */
+@keyframes ambientShift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.75;
+  }
+}
+
+
+/* Desplazamiento suave al navegar por anchors (#about, #projects, etc.) */
 html {
   scroll-behavior: smooth;
 }
 
-body {
+/* Tipografía base en toda la app */
+* {
   font-family: "Geist", sans-serif;
 }
 
+/* Variables de color del sistema visual */
 :root {
   --pl-bg-1: #111111;
   --pl-bg-2: #1a1a1a;
@@ -43,49 +78,146 @@ body {
   --pl-accent: #ff8400;
 }
 
+/* Fondo global base: gradientes claros para contraste sobre cards oscuras */
 body {
   margin: 0;
   background:
-    radial-gradient(900px 540px at 90% -12%, rgba(255, 132, 0, 0.08), transparent 58%),
-    radial-gradient(720px 460px at 10% 84%, rgba(184, 185, 182, 0.07), transparent 60%),
-    linear-gradient(180deg, #161616 0%, #111111 100%);
+    radial-gradient(1000px 580px at 95% -20%, rgba(255, 132, 0, 0.16), transparent 60%),
+    radial-gradient(820px 520px at 8% 82%, rgba(196, 196, 196, 0.12), transparent 62%),
+    linear-gradient(180deg, #1b1b1b 0%, #141414 45%, #101010 100%);
   color: var(--pl-text-soft);
 }
 
+/* Halo principal del fondo con animación lenta */
+.bg-ambient-glow {
+  position: absolute;
+  inset: -8%;
+  background:
+    radial-gradient(640px 400px at 18% 18%, rgba(255, 176, 102, 0.12), transparent 72%),
+    radial-gradient(760px 480px at 82% 28%, rgba(255, 132, 0, 0.1), transparent 72%);
+  animation: ambientShift 16s ease-in-out infinite;
+}
+
+/* Orb cálido del lado superior derecho */
 .bg-orb-orange {
   position: absolute;
-  top: -70px;
-  right: 36px;
-  width: 280px;
-  height: 280px;
+  top: -80px;
+  right: 20px;
+  width: 340px;
+  height: 340px;
   border-radius: 9999px;
-  background: rgba(255, 132, 0, 0.1);
+  background: radial-gradient(circle at 35% 35%, rgba(255, 184, 122, 0.44), rgba(255, 132, 0, 0.14) 52%, transparent 74%);
+  filter: blur(1px);
   animation: orangeOrbFloat 18s ease-in-out infinite;
 }
 
+/* Orb frío/neutral del lado inferior izquierdo */
 .bg-orb-gray {
   position: absolute;
-  left: -100px;
-  top: 62%;
-  width: 230px;
-  height: 230px;
+  left: -80px;
+  top: 58%;
+  width: 280px;
+  height: 280px;
   border-radius: 9999px;
-  background: rgba(46, 46, 46, 0.56);
+  background: radial-gradient(circle at 40% 40%, rgba(225, 225, 225, 0.2), rgba(60, 60, 60, 0.22) 58%, transparent 76%);
   animation: grayOrbFloat 20s ease-in-out infinite;
 }
 
+/* Luz secundaria para romper uniformidad del fondo */
+.bg-orb-soft {
+  position: absolute;
+  top: 22%;
+  left: 38%;
+  width: 240px;
+  height: 240px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.11), transparent 72%);
+  animation: softOrbFloat 22s ease-in-out infinite;
+}
+
+/* Grano sutil para evitar que el fondo se vea plano */
+.bg-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.14) 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+}
+
+/* Ajustes de tamaño/posición del fondo para móviles */
 @media (max-width: 768px) {
   .bg-orb-orange {
-    top: -55px;
-    right: 10px;
-    width: 220px;
-    height: 220px;
+    top: -45px;
+    right: -18px;
+    width: 260px;
+    height: 260px;
   }
 
   .bg-orb-gray {
-    left: -95px;
-    top: 70%;
-    width: 180px;
-    height: 180px;
+    left: -70px;
+    top: 74%;
+    width: 210px;
+    height: 210px;
   }
+
+  .bg-orb-soft {
+    top: 36%;
+    left: 54%;
+    width: 170px;
+    height: 170px;
+  }
+}
+
+/* Componente base de cards (hero, experiencia, proyectos) */
+.card {
+  @apply rounded-[28px] border bg-[#1A1A1A] border-[#2E2E2E] p-6 backdrop-blur-md transition-all duration-300;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+}
+
+/* Estado hover compartido de cards */
+.card:hover {
+  @apply border-white/15 bg-white/5;
+}
+
+/* Título principal dentro de una card */
+.card-title {
+  @apply text-xl font-bold text-white;
+}
+
+/* Metadata de card (stack, fecha, empresa) */
+.card-meta {
+  @apply mt-4 text-sm text-[#ff8400];
+  font-family: "Geist", monospace;
+}
+
+/* Texto descriptivo de card */
+.card-text {
+  @apply mt-4 text-base leading-relaxed text-[#B8B9B6];
+}
+
+/* Etiqueta naranja para subtítulos de sección */
+.title-orange{
+  @apply text-[#ff8400] font-bold text-sm text-[12px];
+}
+
+/* Título principal de sección */
+.title-white{
+  @apply text-white font-bold text-sm text-[34px];
+}
+
+/* Botón CTA principal */
+.button-black{
+  @apply w-full rounded-full bg-[#FF8400] px-7 py-3 text-sm text-[#111111] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ff9b33] hover:shadow-[0_12px_28px_rgba(255,132,0,0.28)] sm:w-auto
+}
+/* Botón secundario */
+.button-white{
+  @apply w-full rounded-full border border-white/20 bg-[#1A1A1A] px-7 py-3 text-sm text-[#FFFFFF] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#ff8400]/55 hover:bg-[#232323] hover:text-[#ffb066] hover:shadow-[0_10px_26px_rgba(0,0,0,0.45)] sm:w-auto
+}
+
+
+/* Variante de card para bloques de contenido largo */
+
+.cardpc {
+  @apply rounded-[28px] border bg-[#1A1A1A] border-[#2E2E2E] p-6 backdrop-blur-md transition-all duration-300;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
 }

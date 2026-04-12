@@ -6,17 +6,29 @@ const NAV_ITEMS = [
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between py-12 px-6 md:px-22">
-      {/* Logo */}
-      <div className="text-2xl text-[#ffffff] tracking-tighter hover:opacity-80 transition-opacity cursor-pointer"><ul><a href="#inicio">&lt;/&gt;</a></ul>
+    <header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-5 py-6 sm:px-12 sm:py-12 md:px-10 pointer-events-auto">
+      <div className="text-2xl text-[#ffffff] tracking-tighter">
+        <a href="#inicio" className="hover:opacity-80 transition-opacity cursor-pointer" aria-label="Ir al inicio">
+          &lt;/&gt;
+        </a>
       </div>
 
-      {/* Navigation */}
-      <nav id="inicio">
-        <ul className="flex items-center gap-4 sm:gap-8 text-sm font-medium text-gray-400">
+      <nav aria-label="Navegación principal">
+        <ul className="hidden items-center gap-6 text-sm text-gray-400 sm:flex lg:gap-10">
           {NAV_ITEMS.map((i) => (
             <li key={i.href}>
-              <a href={i.href} className="inline-block hover:opacity-80 hover:text-[#ff8400] transition-all duration-300 cursor-pointer">{i.label} </a>
+              <a href={i.href} className="inline-block cursor-pointer transition-all duration-300 hover:text-[#ff8400] hover:opacity-80" aria-label={`Ir a ${i.label}`}>
+                {i.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <ul className="flex items-center gap-3 text-xs text-gray-400 sm:hidden">
+          {NAV_ITEMS.map((i) => (
+            <li key={i.href}>
+              <a href={i.href} className="inline-block cursor-pointer transition-colors duration-300 hover:text-[#ff8400]" aria-label={`Ir a ${i.label}`}>
+                {i.label}
+              </a>
             </li>
           ))}
         </ul>

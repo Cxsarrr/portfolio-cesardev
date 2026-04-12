@@ -8,17 +8,12 @@ import TechStack from "./components/TechStack";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-{/* Color titlos (naranja): #ff8400 */}
-{/* Color gris: #b8b9b6 */}
-{/* Color blanco: #ffffff */}
-{/* Color gris mas claro: #2e2e2e */}
-{/* Color */}
-
 function App() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#111111]">
-      <div className="relative z-10">
+    <>
       <Background />
+      <main className="relative z-10 min-h-screen overflow-hidden bg-transparent">
+        <div className="relative z-10">
         <Header />
         <Hero />
         <Experience />
@@ -27,8 +22,9 @@ function App() {
         <TechStack />
         <Contact />
         <Footer />
-      </div>
-    </main>
+        </div>
+      </main>
+    </>
   );
 }
 

@@ -1,53 +1,50 @@
 export default function Hero() {
   return (
-    <section className="px-4 pt-24 pb-16 md:px-16 lg:px-10">
-      <div className=" mx-auto grid max-w-7xl items-start gap-16 lg:grid-cols-[1.1fr_1.1fr]">
-        <div className="max-w-2xl">
+    <section id="inicio" className="px-5 pt-28 pb-12 sm:px-6 md:px-10 lg:pt-36 lg:pb-16">
+      <div className="grid w-full items-start gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+          <div className="max-w-none lg:max-w-2xl">
+            <h1 className="leading-[0.95]">
+              <span className="block text-4xl font-bold text-[#ff8400] sm:text-5xl md:text-6xl">
+                Hey, soy Cesar
+              </span>
+              <span className="mt-2 block text-3xl font-bold text-[#FFFFFF] sm:text-4xl md:text-5xl">
+                Desarrollador Full Stack
+              </span>
+            </h1>
 
-          <h1 className="leading-none">
-            <span className="block text-5xl font-bold text-orange-500 md:text-7xl">
-              Hey, soy Cesar
-            </span>
-            <span className="mt-3 block text-4xl font-bold text-white md:text-6xl">
-              Desarrollador Full Stack
-            </span>
-          </h1>
-
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/70">
-            Construyo interfaces limpias, rápidas y pensadas para comunicar
-            valor sin ruido.
-          </p>
-
-          <p className="mt-6 text-sm font-semibold text-orange-500 md:text-base">
-            Performance frontend, diseño de APIs y UX orientada a conversión.
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-4">
-            <button className="rounded-full bg-orange-500 px-7 py-3 text-sm font-semibold text-black transition hover:bg-orange-400">
-              Ver proyectos
-            </button>
-
-            <button className="rounded-full border border-white/15 bg-white/5 px-7 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-              Contáctame
-            </button>
-          </div>
-        </div>
-
-        <div className="flex justify-start lg:justify-end">
-          <div className="w-full max-w-md rounded-[28px] border border-white/10 bg-white/[0.04] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur-md">
-            <p className="text-xs text-white/45">
-              Disponible para oportunidades
+            <p className="mt-6 w-full text-base leading-relaxed text-[#B8B9B6] sm:text-lg">
+              Construyo interfaces limpias, rápidas y pensadas para comunicar valor sin ruido.
             </p>
 
-            <h2 className="mt-4 text-2xl font-semibold leading-snug text-white">
-              Busco proyectos desafiantes en producto digital y desarrollo web.
-            </h2>
+            <p className="mt-5 text-sm text-[#FF8400] md:text-base">
+              Performance frontend, diseño de APIs y UX orientada a conversión.
+            </p>
 
-            <div className="mt-6 inline-flex rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-2 text-xs font-medium text-orange-400">
-              Open to work · Full Stack
+            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+              <a href="#projects" className="button-black" aria-label="Ir a la sección de proyectos">
+                Ver proyectos
+              </a>
+
+              <a href="#contact" className="button-white" aria-label="Ir a la sección de contacto">
+                Contáctame
+              </a>
             </div>
           </div>
-        </div>
+
+          <div className="mt-2 flex justify-start lg:mt-2 lg:justify-end">
+            <aside className="card h-auto max-w-full p-5 sm:max-w-md sm:p-6" aria-label="Disponibilidad laboral">
+              <p className="text-xs text-[#B8B9B6]">Disponible para oportunidades</p>
+
+              <p className="mt-4 text-[20px] font-semibold leading-snug text-[#FFFFFF] sm:text-[22px]">
+                <span className="block">Busco proyectos desafiantes</span>
+                <span className="block">en producto digital y desarrollo web.</span>
+              </p>
+
+              <span className="mt-6 inline-flex rounded-full border border-orange-500/20 bg-black/10 px-4 py-2 text-xs text-orange-400">
+                Open to work · Full Stack
+              </span>
+            </aside>
+          </div>
       </div>
     </section>
   );

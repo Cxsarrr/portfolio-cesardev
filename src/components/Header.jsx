@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-5 py-6 sm:px-12 sm:py-12 md:px-10 pointer-events-auto">
       <div className="text-2xl text-[#ffffff] tracking-tighter">
-        <a href="#inicio" className="hover:opacity-80 transition-opacity cursor-pointer" aria-label="Ir al inicio">
+        <a href="#inicio" className="text-[#FFFFFF] hover:text-[#FF8400] cursor-pointer" aria-label="Ir al inicio">
           &lt;/&gt;
         </a>
       </div>

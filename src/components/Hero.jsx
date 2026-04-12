@@ -20,7 +20,7 @@ export default function Hero() {
               Performance frontend, diseño de APIs y UX orientada a conversión.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+            <div className="mt-8 text-center flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <a href="#projects" className="button-black" aria-label="Ir a la sección de proyectos">
                 Ver proyectos
               </a>

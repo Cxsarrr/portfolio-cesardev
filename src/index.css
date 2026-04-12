@@ -197,7 +197,7 @@ body {
 
 /* Etiqueta naranja para subtítulos de sección */
 .title-orange{
-  @apply text-[#ff8400] font-bold text-sm text-[12px];
+  @apply text-[#ff8400] font-bold text-sm uppercase tracking-[0.3em] text-[12px];
 }
 
 /* Título principal de sección */
@@ -212,12 +212,4 @@ body {
 /* Botón secundario */
 .button-white{
   @apply w-full rounded-full border border-white/20 bg-[#1A1A1A] px-7 py-3 text-sm text-[#FFFFFF] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#ff8400]/55 hover:bg-[#232323] hover:text-[#ffb066] hover:shadow-[0_10px_26px_rgba(0,0,0,0.45)] sm:w-auto
-}
-
-
-/* Variante de card para bloques de contenido largo */
-
-.cardpc {
-  @apply rounded-[28px] border bg-[#1A1A1A] border-[#2E2E2E] p-6 backdrop-blur-md transition-all duration-300;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
 }

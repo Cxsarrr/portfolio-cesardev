@@ -1,14 +1,18 @@
+// Main Projects Component
+// Renders a grid of recent project cards with links to live demos and source code
 export default function Projects() {
     return (
-        <section id="projects" aria-labelledby="projects-title" className="px-5 pb-12 sm:px-6 md:px-10">
-            <header className="mx-auto w-full">
+        <section id="projects" aria-labelledby="projects-title" className="section">
+            <header className="section-header">
                 <p className="title-orange">PROYECTOS</p>
                 <h2 id="projects-title" className="title-white text-5xl font-bold text-white">
                     Exploraciones recientes
                 </h2>
             </header>
 
+            {/* Projects Grid Container */}
             <ul className="mt-8 grid w-full grid-cols-1 gap-6 md:grid-cols-3">
+                {/* Project Card Item */}
                 <li>
                     <article className="card h-full">
                         <h3 className="card-title">Proyecto 1</h3>

@@ -186,18 +186,17 @@ body {
 
 /* Metadata de card (stack, fecha, empresa) */
 .card-meta {
-  @apply mt-4 text-sm text-[#ff8400];
-  font-family: "Geist", monospace;
+  @apply mt-4 text-sm text-[#ff8400] font-mono;
 }
 
 /* Texto descriptivo de card */
 .card-text {
-  @apply mt-4 text-base leading-relaxed text-[#B8B9B6];
+  @apply mt-4 text-sm leading-relaxed text-[#B8B9B6];
 }
 
 /* Etiqueta naranja para subtítulos de sección */
-.title-orange{
-  @apply text-[#ff8400] font-bold text-sm uppercase tracking-[0.3em] text-[12px];
+.title-orange {
+  @apply text-[#ff8400] font-mono font-bold text-xs uppercase tracking-[0.2em];
 }
 
 /* Título principal de sección */
@@ -212,4 +211,19 @@ body {
 /* Botón secundario */
 .button-white{
   @apply w-full rounded-full border border-white/20 bg-[#1A1A1A] px-7 py-3 text-sm text-[#FFFFFF] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#ff8400]/55 hover:bg-[#232323] hover:text-[#ffb066] hover:shadow-[0_10px_26px_rgba(0,0,0,0.45)] sm:w-auto
+}
+
+/* ─────────────────────────────────────────
+   COMPONENTES DE SECCIÓN
+   Usados en Hero, Experience, Projects, etc.
+   ───────────────────────────────────────── */
+
+/* Espaciado estándar de cada sección (solo vertical — el px lo maneja el container en App.jsx) */
+.section {
+  @apply pb-14;
+}
+
+/* Encabezado de sección (label naranja + h2) */
+.section-header {
+  @apply mb-8 max-w-2xl;
 }

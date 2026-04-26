@@ -1,16 +1,21 @@
+// Main About Component
+// Renders the personal profile description and key focus areas
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="px-5 pb-12 sm:px-6 md:px-10">
+    <section id="about" aria-labelledby="about-title" className="section">
       <div className="mx-auto w-full max-w-none">
-        <div className="max-w-3xl">
+        <header className="section-header">
           <p className="title-orange">SOBRE MI</p>
           <h2 id="about-title" className="title-white mt-2 text-4xl font-bold text-white sm:text-5xl">
-            Un perfil que mezcla codigo, criterio y colaboracion
+            Un perfil que mezcla <span className="text-[#ff8400]">código</span>, <span className="text-[#ff8400]">criterio</span> y <span className="text-[#ff8400]">colaboración</span>
           </h2>
-        </div>
+        </header>
+        
+        {/* Profile Details Grid */}
         <div className="mt-8">
           <article className="card w-full overflow-hidden">
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+              {/* Left Column: Main Description */}
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF8400]">
                 Enfoque
@@ -25,6 +30,7 @@ export default function About() {
                 </p>
               </div>
 
+              {/* Right Column: Key Attributes */}
               <div className="grid gap-4">
                 <div className="border-l-2 border-l-[#FF8400]/50 pl-4">
                   <p className="text-xs title-orange">Foco</p>
